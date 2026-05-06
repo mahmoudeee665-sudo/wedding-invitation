@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CountdownSection.css";
 
+
 const WEDDING_DATE = new Date("2026-10-01T18:00:00");
 
 function pad(n) {
@@ -34,9 +35,9 @@ export default function CountdownSection() {
   ];
 
   return (
-    <section className="countdown-section">
+    <section className="countdown-section ">
       {/* Decorative monogram */}
-      <div className="monogram">
+      <div className="monogram"  >
         <svg viewBox="0 0 80 80" width="80" height="80" fill="none">
           <circle
             cx="40"
@@ -60,10 +61,10 @@ export default function CountdownSection() {
         </svg>
       </div>
 
-      <h2 className="countdown-title">Countdown</h2>
-      <p className="countdown-sub">TO THE MOST SPECIAL DAY OF OUR LIVES</p>
+      <h2 className="countdown-title fade-up">Countdown</h2>
+      <p className="countdown-sub fade-up">TO THE MOST SPECIAL DAY OF OUR LIVES</p>
 
-      <div className="countdown-grid">
+      <div className="countdown-grid fade-up ">
         {units.map(({ label, value }) => (
           <div key={label} className="countdown-unit">
             <span className="countdown-number">{value}</span>

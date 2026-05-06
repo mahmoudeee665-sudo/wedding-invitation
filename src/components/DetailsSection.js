@@ -13,7 +13,7 @@ export default function DetailsSection() {
   return (
     <section className="details-section">
       {/* ── Header ── */}
-      <div className="details-header">
+      <div className="details-header fade-up">
         <img src="/dog-bouquet.png" className="details-icon" alt="" />
         <h2 className="details-title">The Details</h2>
         <p className="details-subtitle">EVERYTHING YOU NEED TO KNOW</p>

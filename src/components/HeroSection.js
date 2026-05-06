@@ -37,7 +37,7 @@ export default function HeroSection({ active }) {
         <div className="hero-overlay" />
       </div>
 
-      <div className="hero-content">
+      <div className="hero-content" >
         <p
           className="hero-bismillah arabic-text"
           style={{ animationDelay: "0.2s" }}

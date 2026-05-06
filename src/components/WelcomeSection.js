@@ -5,7 +5,7 @@ export default function WelcomeSection() {
   return (
     <section className="welcome-section">
       <div className="welcome-inner">
-        <h2 className="welcome-title">Welcome!</h2>
+        <h2 className="welcome-title fade-up ">Welcome!</h2>
 
         <div className="welcome-divider">
           <span />
@@ -13,7 +13,7 @@ export default function WelcomeSection() {
           <span />
         </div>
 
-        <p className="welcome-text">
+        <p className="welcome-text fade-up ">
           From our first sunrise together to the countless stars we’ve counted
           since, our journey has led us to this moment. Please join us as we
           exchange vows at twilight, closing one chapter and beginning our

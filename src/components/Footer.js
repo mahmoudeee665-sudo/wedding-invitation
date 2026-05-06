@@ -6,24 +6,24 @@ export default function Footer() {
     <footer className="footer">
 
       {/* Rings Illustration */}
-      <div className="footer-rings">
+      <div className="footer-rings fade-up">
         <img
           src="/rings-illustration.png"
           alt="Wedding Rings"
         />
       </div>
 
-      <p className="footer-names">Mostafa &amp; Raghad</p>
+      <p className="footer-names fade-up" >Mostafa &amp; Raghad</p>
 
-      <p className="footer-date">
+      <p className="footer-date fade-up" >
         20 · 06 · 2026
       </p>
 
-      <p className="footer-arabic arabic-text">
+      <p className="footer-arabic arabic-text fade-up" >
         وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
       </p>
 
-      <p className="footer-verse">
+      <p className="footer-verse fade-up">
         And He placed between you affection and mercy — Quran 30:21
       </p>
 

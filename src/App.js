@@ -8,7 +8,7 @@ import MomentsSection from "./components/MomentsSection";
 import DetailsSection from "./components/DetailsSection";
 import RSVPSection from "./components/OrderSection";
 import Footer from "./components/Footer";
-
+import useFadeUp from "./hooks/useFadeUp";
 import "./App.css";
 
 
@@ -18,7 +18,7 @@ export default function App() {
   const [muted, setMuted] = useState(false);
 
   const musicRef = useRef(null);
-
+useFadeUp();
   /* ───────────────────────────── */
   /* Initialize AOS */
   /* ───────────────────────────── */
@@ -28,6 +28,8 @@ export default function App() {
   /* Start music after intro */
   /* ───────────────────────────── */
 
+
+  
   useEffect(() => {
     if (phase === "site" && musicRef.current) {
 

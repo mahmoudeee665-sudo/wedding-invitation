@@ -101,3 +101,23 @@ body {
 }
 
 
+/* Fade Up Initial State */
+
+/* Initial state */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+
+  transition:
+    opacity 3.7s ease,
+    transform 2.1s ease;
+}
+
+
+/* Visible state */
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
