@@ -1,0 +1,82 @@
+.footer {
+  background: var(--charcoal);
+  padding: 60px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.footer-leaf { margin-bottom: 4px; }
+
+.footer-names {
+  font-family: var(--font-script);
+  font-size: 36px;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+.footer-date {
+  font-family: var(--font-caps);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--gold-light);
+}
+
+.footer-arabic {
+  font-family: var(--font-arabic);
+  font-size: 18px;
+  color: var(--gold-light);
+  direction: rtl;
+  margin-top: 8px;
+}
+
+.footer-verse {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--cream-dark);
+  opacity: 0.5;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(300px, 80%);
+  margin: 8px 0;
+}
+
+.footer-divider span:not(.f-ornament) {
+  flex: 1;
+  height: 1px;
+  background: rgba(201, 168, 76, 0.2);
+}
+
+.f-ornament {
+  color: var(--gold);
+  font-size: 10px;
+}
+
+.footer-copy {
+  font-family: var(--font-caps);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--cream-dark);
+  opacity: 0.3;
+}
+.footer-rings {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-rings img {
+  width: 120px;
+  max-width: 42vw;
+  object-fit: contain;
+}

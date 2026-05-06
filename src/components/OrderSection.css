@@ -1,0 +1,154 @@
+.order-section {
+  position: relative;
+  background: var(--cream);
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* ───────── Top Couple Image ───────── */
+.order-top-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.order-top-image img {
+  width: 160px;
+  max-width: 42vw;
+  object-fit: contain;
+}
+
+/* ───────── Header ───────── */
+.order-header {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  padding: 0 20px;
+}
+
+.order-title {
+  font-family: var(--font-script);
+  font-size: clamp(44px, 8vw, 68px);
+  color: var(--sage-dark);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.order-subtitle {
+  font-family: var(--font-caps);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--sage-dark);
+  opacity: 0.55;
+}
+
+/* ───────── Venue Background ───────── */
+.order-venue-wrapper {
+  position: relative;
+  margin-top: 50px;
+}
+
+.order-venue-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/* ───────── Timeline ───────── */
+.order-timeline {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-content {
+  text-align: center;
+  padding: 8px 20px;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 34px);
+  font-weight: 400;
+  color: var(--sage-dark);
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  font-family: var(--font-serif);
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--sage-dark);
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+.timeline-line {
+  width: 1px;
+  height: 80px;
+  background: rgba(68, 0, 34, 0.18);
+}
+
+/* ───────── Mobile ───────── */
+@media (max-width: 768px) {
+  .order-section {
+    padding-top: 60px;
+  }
+
+  .order-top-image img {
+    width: 180px;
+  }
+
+  .order-title {
+    font-size: 52px;
+  }
+
+  .timeline-content h3 {
+    font-size: 22px;
+  }
+
+  .timeline-content p {
+    font-size: 15px;
+  }
+
+  .timeline-line {
+    height: 65px;
+  }
+
+  .order-timeline {
+    padding-top: 0;
+  }
+}
+
+.order-venue-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: bottom;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(9%)
+    sepia(40%)
+    saturate(2788%)
+    hue-rotate(308deg)
+    brightness(93%)
+    contrast(112%);
+}
+

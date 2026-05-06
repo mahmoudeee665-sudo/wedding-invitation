@@ -1,0 +1,87 @@
+/* ─── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --sage: #660033;
+  --sage-dark: #440022;
+  --sage-light: #910048;
+  --cream: #f5f0e8;
+  --cream-dark: #e8e0d0;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --deep-navy: #0f1a2e;
+  --charcoal: #2D0017;
+  --text-dark: #220011;
+  --text-light: #f5f0e8;
+
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-caps: 'Cinzel', serif;
+  --font-arabic: 'Amiri', serif;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+    background: var(--charcoal); /* ← add this */
+
+}
+
+body {
+  background: var(--charcoal);
+  color: var(--text-dark);
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--charcoal); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ─── Global Keyframes ───────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

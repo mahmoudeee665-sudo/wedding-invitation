@@ -1,0 +1,242 @@
+.details-section {
+  background: var(--charcoal);
+  padding: 80px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background texture ── */
+.details-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Section header ── */
+.details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+.details-icon {
+  width: 56px;
+  height: 56px;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 8px rgba(201,168,76,0.3));
+}
+
+.details-title {
+  font-family: var(--font-script);
+  font-size: clamp(44px, 8vw, 64px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.details-subtitle {
+  font-family: var(--font-caps);
+  font-size: clamp(9px, 2vw, 11px);
+  letter-spacing: 0.28em;
+  color: var(--gold-light);
+  opacity: 0.7;
+}
+
+/* ── Card ── */
+.details-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gold corner accents */
+.details-card::before,
+.details-card::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--gold);
+  border-style: solid;
+  opacity: 0.6;
+  z-index: 2;
+}
+.details-card::before {
+  top: 10px; left: 10px;
+  border-width: 1px 0 0 1px;
+}
+.details-card::after {
+  bottom: 10px; right: 10px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ── Hotel image strip ── */
+.details-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.details-hotel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(0.85);
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.details-card:hover .details-hotel-img {
+  transform: scale(1.04);
+  filter: brightness(0.75) saturate(0.9);
+}
+
+.details-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(15,8,26,0.85) 100%);
+}
+
+.details-image-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-caps);
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+
+/* ── Card body ── */
+.details-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details-venue-name {
+  font-family: var(--font-caps);
+  font-size: clamp(16px, 3.5vw, 20px);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--cream);
+  text-align: center;
+}
+
+/* ── Info rows ── */
+.details-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+
+.details-info-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.details-info-icon {
+  font-size: 15px;
+  color: var(--gold);
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.details-info-label {
+  font-family: var(--font-caps);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--cream-dark);
+  opacity: 0.5;
+  flex-shrink: 0;
+  width: 52px;
+}
+
+.details-info-value {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--cream-dark);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* ── Map button ── */
+.details-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 20px;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.45);
+  color: var(--gold-light);
+  font-family: var(--font-caps);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  border-radius: 1px;
+}
+
+.details-map-btn:hover {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.details-map-btn svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* ── Bottom ornament ── */
+.details-ornament {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.details-ornament-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.4));
+}
+
+.details-ornament-line:last-child {
+  background: linear-gradient(to left, transparent, rgba(201,168,76,0.4));
+}
+
+.details-ornament-gem {
+  color: var(--gold);
+  font-size: 10px;
+  opacity: 0.7;
+}
