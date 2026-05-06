@@ -19,8 +19,9 @@ export default function MomentsSection() {
       </h2>
       <Marquee
         speed={50}
-        pauseOnHover={true}
+        pauseOnHover={false}
         gradient={false}
+        pauseOnClick={false}
       >
        
         {images.map((img, index) => (
