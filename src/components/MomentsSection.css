@@ -35,8 +35,3 @@
   margin: 0 12px !important;
 }
 
-.image-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}

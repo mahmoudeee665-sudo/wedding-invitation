@@ -1,77 +1,49 @@
-  import Marquee from "react-fast-marquee";
-  import "./MomentsSection.css";
+import Marquee from "react-fast-marquee";
+import "./MomentsSection.css";
 
-  const items = [
+const images = [
+  "/gallery-1.jpg",
+  "/gallery-4.jpg",
+  "/gallery-2.jpg",
+];
 
-    {
-      type: "image",
-      src: "/gallery-1.jpg",
-    },
+export default function MomentsSection() {
 
-    {
-      type: "video",
-      src: "/moment-video.mp4",
-    },
+  return (
 
-    {
-      type: "image",
-      src: "/gallery-2.jpg",
-    },
+    <section className="moments-section">
 
-  ];
+      <h2 className="moments-title fade-up">
+        Our Moments
+      </h2>
 
-  export default function MomentsSection() {
+      <Marquee
+        speed={50}
+        pauseOnHover={false}
+        pauseOnClick={false}
+        gradient={false}
+      >
 
-    return (
+        {images.map((img, index) => (
 
-      <section className="moments-section">
+          <div
+            className="image-card"
+            key={index}
+          >
 
-        <h2 className="moments-title fade-up">
-          Our Moments
-        </h2>
+            <img
+              src={img}
+              alt={`moment-${index}`}
+            />
 
-        <Marquee
-          speed={50}
-          pauseOnHover={false}
-          pauseOnClick={false}
-          gradient={false}
-        >
+          </div>
 
-          {items.map((item, index) => (
+        ))}
 
-            <div
-              className="image-card"
-              key={index}
-            >
+      </Marquee>
 
-              {item.type === "image" ? (
+    </section>
 
-                <img
-                  src={item.src}
-                  alt={`moment-${index}`}
-                />
+  );
 
-              ) : (
-
-                <video
-                  src={item.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-
-              )}
-
-            </div>
-
-          ))}
-
-        </Marquee>
-
-      </section>
-
-    );
-
-  }
+}
