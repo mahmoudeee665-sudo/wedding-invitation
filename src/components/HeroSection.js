@@ -46,7 +46,7 @@ export default function HeroSection({ active }) {
         </p>
 
         <p className="hero-pre-title" style={{ animationDelay: "0.5s" }}>
-          We're Getting Married
+       We're Getting Engaged
         </p>
 
         <h1 className="hero-names" style={{ animationDelay: "0.8s" }}>
