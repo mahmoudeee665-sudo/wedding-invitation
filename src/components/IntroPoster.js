@@ -2,26 +2,13 @@ import React, { useRef, useState } from "react";
 import "./IntroPoster.css";
 
 export default function IntroPoster({ setPhase }) {
-
   const videoRef = useRef(null);
 
   const [started, setStarted] = useState(false);
-
   const [fadeOut, setFadeOut] = useState(false);
 
-  const [whiteFlash, setWhiteFlash] = useState(false);
-
   const startVideo = async () => {
-
     if (!videoRef.current) return;
-
-    /* White splash on click */
-
-    setWhiteFlash(true);
-
-    setTimeout(() => {
-      setWhiteFlash(false);
-    }, 180);
 
     setStarted(true);
 
@@ -33,32 +20,17 @@ export default function IntroPoster({ setPhase }) {
   };
 
   const handleEnded = () => {
-
-    /* White splash before transition */
-
-    setWhiteFlash(true);
+    setFadeOut(true);
 
     setTimeout(() => {
-
-      setFadeOut(true);
-
-      setTimeout(() => {
-        setPhase("site");
-      }, 2600);
-
-    }, 300);
+      setPhase("site");
+    }, 800);
   };
 
   return (
-
     <div className={`intro-screen ${fadeOut ? "fade-out" : ""}`}>
 
-      {/* White cinematic splash */}
-
-      <div className={`white-flash ${whiteFlash ? "flash-active" : ""}`} />
-
-      {/* Poster */}
-
+      {/* Poster before click */}
       {!started && (
         <img
           src="/poster-photo.jpeg"
@@ -68,8 +40,7 @@ export default function IntroPoster({ setPhase }) {
         />
       )}
 
-      {/* Video */}
-
+      {/* Video after click */}
       <video
         ref={videoRef}
         className={`intro-video ${started ? "show-video" : "hide-video"}`}
@@ -79,11 +50,9 @@ export default function IntroPoster({ setPhase }) {
         onEnded={handleEnded}
       />
 
-      {/* Text */}
-
+      {/* Bottom text */}
       {!started && (
         <div className="intro-text">
-
           <p className="intro-ar">
             اضغط لفتح الدعوة
           </p>
@@ -91,7 +60,6 @@ export default function IntroPoster({ setPhase }) {
           <p className="intro-en">
             CLICK THE SEAL TO OPEN
           </p>
-
         </div>
       )}
 
