@@ -4,7 +4,7 @@ import "./DetailsSection.css";
 export default function DetailsSection() {
   const handleMapClick = () => {
     window.open(
-      "https://www.google.com/maps/search/ORO+PLAZA+HOTEL",
+      "https://www.google.com/maps/search/",
       "_blank",
       "noopener noreferrer"
     );
@@ -27,7 +27,7 @@ export default function DetailsSection() {
           <img
             src="/finca-biniagual-illustration.png"
             className="details-hotel-img"
-            alt="Oro Plaza Hotel"
+            alt="."
           />
           <div className="details-image-overlay" />
           <span className="details-image-badge">THE VENUE</span>
@@ -35,13 +35,13 @@ export default function DetailsSection() {
  
         {/* Body */}
         <div className="details-body">
-          <h3 className="details-venue-name">ORO PLAZA HOTEL</h3>
+          <h3 className="details-venue-name">Hilton Alexandria Corniche</h3>
  
           <div className="details-info-grid">
             <div className="details-info-row">
               <span className="details-info-icon">📅</span>
               <span className="details-info-label">DATE</span>
-              <span className="details-info-value">Saturday, 20 June 2026</span>
+                <span className="details-info-value">Thursday, 1 October 2026</span>
             </div>
  
             <div className="details-info-row">
@@ -53,7 +53,7 @@ export default function DetailsSection() {
             <div className="details-info-row">
               <span className="details-info-icon">📍</span>
               <span className="details-info-label">WHERE</span>
-              <span className="details-info-value">Oro Plaza Hotel, Cairo</span>
+              <span className="details-info-value">Hilton Corniche, Alexandria</span>
             </div>
           </div>
  

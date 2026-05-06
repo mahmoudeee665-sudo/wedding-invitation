@@ -3,7 +3,7 @@ import './WelcomeSection.css';
 
 export default function WelcomeSection() {
   return (
-    <section className="welcome-section">
+    <section className="welcome-section" >
       <div className="welcome-inner">
         <h2 className="welcome-title">Welcome!</h2>
 

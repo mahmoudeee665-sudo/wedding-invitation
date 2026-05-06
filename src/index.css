@@ -17,14 +17,19 @@
   --font-caps: 'Cinzel', serif;
   --font-arabic: 'Amiri', serif;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
 /* ─── Reset ─────────────────────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+html,
+body,
+#root {
 
+  background: #000;
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -85,3 +90,14 @@ body {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+

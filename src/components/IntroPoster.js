@@ -1,48 +1,100 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./IntroPoster.css";
 
-export default function IntroPoster({ phase, setPhase }) {
+export default function IntroPoster({ setPhase }) {
+
   const videoRef = useRef(null);
-  const [fadingOut, setFadingOut] = useState(false);
 
-  useEffect(() => {
-    if (phase === "intro" && videoRef.current) {
-      const video = videoRef.current;
-      video.pause();
-      video.currentTime = 0;
+  const [started, setStarted] = useState(false);
+
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const [whiteFlash, setWhiteFlash] = useState(false);
+
+  const startVideo = async () => {
+
+    if (!videoRef.current) return;
+
+    /* White splash on click */
+
+    setWhiteFlash(true);
+
+    setTimeout(() => {
+      setWhiteFlash(false);
+    }, 180);
+
+    setStarted(true);
+
+    try {
+      await videoRef.current.play();
+    } catch (e) {
+      console.log(e);
     }
-  }, [phase]);
-
-  const handleIntroClick = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.play().catch(() => {});
   };
 
-  const handleVideoEnded = () => {
-    setFadingOut(true);
+  const handleEnded = () => {
+
+    /* White splash before transition */
+
+    setWhiteFlash(true);
+
     setTimeout(() => {
-      setPhase("site");
-    }, 1200);
+
+      setFadeOut(true);
+
+      setTimeout(() => {
+        setPhase("site");
+      }, 2600);
+
+    }, 300);
   };
 
   return (
-    <div className={`intro-overlay ${fadingOut ? "intro-fade-out" : ""}`}>
-      <div className="intro-video-wrap" onClick={handleIntroClick}>
-        <video
-          ref={videoRef}
-          className="intro-video"
-          src="/0506.mp4  "
-          playsInline
-          muted={false}
-          onEnded={handleVideoEnded}
-        />
 
-        <div className="intro-footer-text">
-          <p className="intro-footer-arabic">اضغط الختم لفتح الدعوة</p>
-          <p className="intro-footer-english">CLICK THE SEAL TO OPEN</p>
+    <div className={`intro-screen ${fadeOut ? "fade-out" : ""}`}>
+
+      {/* White cinematic splash */}
+
+      <div className={`white-flash ${whiteFlash ? "flash-active" : ""}`} />
+
+      {/* Poster */}
+
+      {!started && (
+        <img
+          src="/poster-photo.jpeg"
+          alt="Wedding Invitation"
+          className="poster-image"
+          onClick={startVideo}
+        />
+      )}
+
+      {/* Video */}
+
+      <video
+        ref={videoRef}
+        className={`intro-video ${started ? "show-video" : "hide-video"}`}
+        src="/0506.mp4"
+        playsInline
+        preload="auto"
+        onEnded={handleEnded}
+      />
+
+      {/* Text */}
+
+      {!started && (
+        <div className="intro-text">
+
+          <p className="intro-ar">
+            اضغط لفتح الدعوة
+          </p>
+
+          <p className="intro-en">
+            CLICK THE SEAL TO OPEN
+          </p>
+
         </div>
-      </div>
+      )}
+
     </div>
   );
 }

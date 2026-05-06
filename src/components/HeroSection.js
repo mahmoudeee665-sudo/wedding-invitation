@@ -60,7 +60,7 @@ export default function HeroSection({ active }) {
         </p>
 
         <p className="hero-date" style={{ animationDelay: "1.4s" }}>
-          20 June 2026
+          01 OCT 2026
         </p>
 
         <div className="hero-divider" style={{ animationDelay: "1.7s" }}>

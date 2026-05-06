@@ -1,5 +1,5 @@
 .countdown-section {
-  background: var(--sage-dark);
+  background: var(--charcoal);
   padding: 40px 24px;
   display: flex;
   flex-direction: column;
@@ -9,15 +9,22 @@
   overflow: hidden;
 }
 
-/* Subtle texture overlay */
+/* Elegant radial lighting effect */
+
 .countdown-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E");
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(201,168,76,0.07) 0%,
+      transparent 65%
+    );
+
   pointer-events: none;
 }
-
 .monogram {
   opacity: 0.9;
   margin-bottom: 8px;
@@ -81,3 +88,5 @@
   margin-top: 12px;
   opacity: 0.6;
 }
+
+
