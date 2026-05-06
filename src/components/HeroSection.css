@@ -177,3 +177,14 @@
   background: rgba(201, 168, 76, 0.2);
   border-color: var(--gold);
 }
+
+
+/* iPhone SE / very small screens */
+
+@media (max-width: 380px) {
+
+  .hero-names {
+    font-size: 46px;
+  }
+
+}
