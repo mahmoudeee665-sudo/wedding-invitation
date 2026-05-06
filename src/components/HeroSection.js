@@ -26,6 +26,7 @@ export default function HeroSection({ active }) {
           src="/hero-video.mp4"
           muted={muted}
           playsInline
+          autoPlay
           preload="auto"
           onEnded={() => {
             if (videoRef.current) {
