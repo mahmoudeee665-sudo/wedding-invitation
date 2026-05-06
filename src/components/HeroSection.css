@@ -67,7 +67,7 @@
 
 .hero-pre-title {
   font-family: var(--font-caps);
-  font-size: clamp(10px, 2vw, 13px);
+  font-size: clamp(30px, 2vw, 13px);
   letter-spacing: 0.3em;
   color: var(--cream-dark);
   text-transform: uppercase;
@@ -76,7 +76,7 @@
 
 .hero-names {
   font-family: var(--font-script);
-  font-size: clamp(54px, 10vw, 92px);
+  font-size: clamp(35px, 5vw, 92px);
   font-weight: 400;
   color: var(--cream);
   line-height: 1.1;
@@ -96,6 +96,7 @@
 }
 
 .hero-date {
+  margin-top: -6px;
   font-family: var(--font-caps);
   font-size: clamp(22px, 4vw, 34px);
   font-weight: 500;
@@ -184,7 +185,7 @@
 @media (max-width: 380px) {
 
   .hero-names {
-    font-size: 46px;
+    font-size: 30px;
   }
 
 }

@@ -46,16 +46,12 @@ useEffect(() => {
 <video
   ref={videoRef}
   className="hero-video"
-  src="/hero-video.mp4"
+  src="/hero-video-new.mp4"
   muted={muted}
   playsInline
   preload="auto"
   poster="/hero-poster.jpg"
-  onEnded={() => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-  }}
+loop
 />
         <div className="hero-overlay" />
       </div>
