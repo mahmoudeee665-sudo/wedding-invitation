@@ -1,23 +1,11 @@
 import Marquee from "react-fast-marquee";
 import "./MomentsSection.css";
 
-const items = [
-
-  {
-    type: "image",
-    src: "/gallery-1.jpg",
-  },
-
-  {
-    type: "video",
-    src: "/moment-video.mp4",
-  },
-
-  {
-    type: "image",
-    src: "/gallery-2.jpg",
-  },
-
+const images = [
+  "/gallery-1.jpg",
+  "/gallery-2.jpg",
+  "/gallery-3.jpg",
+  "/gallery-4.jpg",
 ];
 
 export default function MomentsSection() {
@@ -37,32 +25,17 @@ export default function MomentsSection() {
         gradient={false}
       >
 
-        {items.map((item, index) => (
+        {images.map((img, index) => (
 
           <div
             className="image-card"
             key={index}
           >
 
-            {item.type === "image" ? (
-
-              <img
-                src={item.src}
-                alt={`moment-${index}`}
-              />
-
-            ) : (
-
-              <video
-                src={item.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
-
-            )}
+            <img
+              src={img}
+              alt={`moment-${index}`}
+            />
 
           </div>
 
