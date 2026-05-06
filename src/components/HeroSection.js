@@ -5,35 +5,58 @@ export default function HeroSection({ active }) {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+useEffect(() => {
 
-    if (active) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  }, [active]);
+  const video = videoRef.current;
+
+  if (!video) return;
+
+  if (active) {
+
+    video.currentTime = 0;
+
+    const playVideo = async () => {
+
+      try {
+
+        await video.play();
+
+      } catch (e) {
+        console.log(e);
+      }
+
+    };
+
+    playVideo();
+
+  } else {
+
+    video.pause();
+
+    video.currentTime = 0;
+
+  }
+
+}, [active]);
 
   return (
     <section className="hero-section">
       {/* ── Background video (plays after intro fades to site) ── */}
       <div className="hero-video-container">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          src="/hero-video.mp4"
-          muted={muted}
-          playsInline
-          autoPlay
-          preload="auto"
-          onEnded={() => {
-            if (videoRef.current) {
-              videoRef.current.pause();
-            }
-          }}
-        />
+<video
+  ref={videoRef}
+  className="hero-video"
+  src="/hero-video.mp4"
+  muted={muted}
+  playsInline
+  preload="auto"
+  poster="/hero-poster.jpg"
+  onEnded={() => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  }}
+/>
         <div className="hero-overlay" />
       </div>
 
