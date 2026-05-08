@@ -50,3 +50,12 @@
 
   transform: scale(1.08);
 }
+
+.music-toggle.playing {
+  animation: musicPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.3); transform: scale(1); }
+  50%      { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); transform: scale(1.06); }
+}

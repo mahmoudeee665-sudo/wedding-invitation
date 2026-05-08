@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { COUPLE, WEDDING, BISMILLAH, ARABIC_SUB } from "../constants";
 import "./HeroSection.css";
 
 export default function HeroSection({ active }) {
@@ -39,8 +40,37 @@ useEffect(() => {
 
 }, [active]);
 
+  const petals = Array.from({ length: 12 }, (_, i) => ({
+    id: i,
+    left: Math.random() * 100,
+    size: 6 + Math.random() * 10,
+    duration: 8 + Math.random() * 10,
+    delay: Math.random() * 12,
+    color: i % 3 === 0 ? "var(--gold)" : "var(--gold-light)",
+    sway: Math.random() * 40 - 20,
+  }));
+
   return (
     <section className="hero-section">
+      {/* ── Floating petals ── */}
+      <div className="petals-container">
+        {petals.map((p) => (
+          <div
+            key={p.id}
+            className="petal"
+            style={{
+              left: `${p.left}%`,
+              width: `${p.size}px`,
+              height: `${p.size * 0.6}px`,
+              animationDuration: `${p.duration}s`,
+              animationDelay: `${p.delay}s`,
+              background: p.color,
+              "--sway": `${p.sway}px`,
+            }}
+          />
+        ))}
+      </div>
+
       {/* ── Background video (plays after intro fades to site) ── */}
       <div className="hero-video-container">
 <video
@@ -56,12 +86,12 @@ loop
         <div className="hero-overlay" />
       </div>
 
-      <div className="hero-content" >
+      <div className="hero-content">
         <p
           className="hero-bismillah arabic-text"
           style={{ animationDelay: "0.2s" }}
         >
-          بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+          {BISMILLAH}
         </p>
 
         <p className="hero-pre-title" style={{ animationDelay: "0.5s" }}>
@@ -69,18 +99,18 @@ loop
         </p>
 
         <h1 className="hero-names" style={{ animationDelay: "0.8s" }}>
-          Mostafa <span className="ampersand">&amp;</span> Raghad
+          {COUPLE.groom} <span className="ampersand">&amp;</span> {COUPLE.bride}
         </h1>
 
         <p
           className="hero-arabic-sub arabic-text"
           style={{ animationDelay: "1.1s" }}
         >
-          فِي الدُّنْيَا وَالآخِرَة
+          {ARABIC_SUB}
         </p>
 
         <p className="hero-date" style={{ animationDelay: "1.4s" }}>
-          01 OCT 2026
+          {WEDDING.dateDisplay}
         </p>
 
         <div className="hero-divider" style={{ animationDelay: "1.7s" }}>

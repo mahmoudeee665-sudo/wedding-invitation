@@ -1,4 +1,3 @@
-import Marquee from "react-fast-marquee";
 import "./MomentsSection.css";
 
 const images = [
@@ -17,30 +16,15 @@ export default function MomentsSection() {
         Our Moments
       </h2>
 
-      <Marquee
-        speed={50}
-        pauseOnHover={false}
-        pauseOnClick={false}
-        gradient={false}
-      >
-
-        {images.map((img, index) => (
-
-          <div
-            className="image-card"
-            key={index}
-          >
-
-            <img
-              src={img}
-              alt={`moment-${index}`}
-            />
-
-          </div>
-
-        ))}
-
-      </Marquee>
+      <div className="marquee-container">
+        <div className="marquee-track">
+          {[...images, ...images].map((img, index) => (
+            <div className="image-card" key={index}>
+              <img src={img} alt={`Wedding memory ${(index % images.length) + 1}`} />
+            </div>
+          ))}
+        </div>
+      </div>
 
     </section>
 

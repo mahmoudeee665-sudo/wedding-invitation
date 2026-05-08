@@ -48,18 +48,17 @@ export default function IntroPoster({ setPhase }) {
 
     setFadeOut(true);
 
-    setTimeout(() => {
+  };
 
-      setPhase("site");
-
-    }, 1400);
-
+  const handleTransitionEnd = (e) => {
+    if (e.propertyName === "opacity" && fadeOut) setPhase("site");
   };
 
   return (
 
     <div
       className={`intro-screen ${fadeOut ? "fade-out" : ""}`}
+      onTransitionEnd={handleTransitionEnd}
     >
 
       {/* Poster before click */}
@@ -83,7 +82,7 @@ export default function IntroPoster({ setPhase }) {
         src="/0506.mp4"
         playsInline
         webkit-playsinline="true"
-        preload="metadata"
+        preload="auto"
         onEnded={handleEnded}
       />
 

@@ -21,7 +21,7 @@ export default function OrderSection() {
     <section className="order-section">
       {/* Top illustration */}
       <div className="order-top-image fade-up">
-        <img src="/couple-dancing-new.png" alt="Couple Dancing" />
+        <img src="/couple-dancing-new.webp" alt="Couple Dancing" />
       </div>
 
       {/* Heading */}

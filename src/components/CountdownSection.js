@@ -1,15 +1,13 @@
   import React, { useState, useEffect } from "react";
+  import { WEDDING } from "../constants";
   import "./CountdownSection.css";
-
-
-  const WEDDING_DATE = new Date("2026-10-01T18:00:00");
 
   function pad(n) {
     return String(n).padStart(2, "0");
   }
 
   function getTimeLeft() {
-    const diff = WEDDING_DATE - Date.now();
+    const diff = WEDDING.date - Date.now();
     if (diff <= 0) return { days: 0, hours: 0, mins: 0, secs: 0 };
     return {
       days: Math.floor(diff / 86400000),
@@ -35,20 +33,15 @@
     ];
 
     return (
-      <section className="countdown-section ">
-        {/* Decorative monogram */}
-<div className="monogram">
-  <img
-    src="/rings-illustration.png"
-    alt="Wedding Rings"
-    className="countdown-rings"
-  />
-</div>
+      <section className="countdown-section">
+        <div className="monogram">
+          <img src="/rings-illustration.png" alt="Wedding Rings" className="countdown-rings" />
+        </div>
 
         <h2 className="countdown-title fade-up">Countdown</h2>
         <p className="countdown-sub fade-up">TO THE MOST SPECIAL DAY OF OUR LIVES</p>
 
-        <div className="countdown-grid fade-up ">
+        <div className="countdown-grid fade-up">
           {units.map(({ label, value }) => (
             <div key={label} className="countdown-unit">
               <span className="countdown-number">{value}</span>
@@ -57,7 +50,6 @@
           ))}
         </div>
 
-        {/* Bottom gold leaf ornament */}
         <div className="section-ornament">✦ ✦ ✦</div>
       </section>
     );

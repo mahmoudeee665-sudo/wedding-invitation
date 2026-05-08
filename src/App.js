@@ -6,7 +6,7 @@ import CountdownSection from "./components/CountdownSection";
 import WelcomeSection from "./components/WelcomeSection";
 import MomentsSection from "./components/MomentsSection";
 import DetailsSection from "./components/DetailsSection";
-import RSVPSection from "./components/OrderSection";
+import OrderSection from "./components/OrderSection";
 import Footer from "./components/Footer";
 import useFadeUp from "./hooks/useFadeUp";
 import "./App.css";
@@ -75,7 +75,7 @@ useFadeUp();
 
       {/* Main website */}
 
-      <div className="site-wrapper">
+      <main className="site-wrapper">
 
         <HeroSection active={phase === "site"} />
 
@@ -87,17 +87,17 @@ useFadeUp();
 
         <DetailsSection />
 
-        <RSVPSection />
+        <OrderSection />
 
         <Footer />
 
-      </div>
+      </main>
 
       {/* Floating music button */}
 
       {phase === "site" && (
         <button
-          className="music-toggle"
+          className={`music-toggle${!muted ? " playing" : ""}`}
           onClick={toggleMute}
           aria-label={
             muted

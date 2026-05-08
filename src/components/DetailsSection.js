@@ -1,10 +1,11 @@
 import React from "react";
+import { WEDDING, VENUE } from "../constants";
 import "./DetailsSection.css";
  
 export default function DetailsSection() {
   const handleMapClick = () => {
     window.open(
-      "https://www.google.com/maps/search/",
+      VENUE.mapsUrl,
       "_blank",
       "noopener noreferrer"
     );
@@ -14,7 +15,7 @@ export default function DetailsSection() {
     <section className="details-section">
       {/* ── Header ── */}
       <div className="details-header fade-up">
-        <img src="/dog-bouquet.png" className="details-icon" alt="" />
+        <img src="/dog-bouquet.webp" className="details-icon" alt="" />
         <h2 className="details-title">The Details</h2>
         <p className="details-subtitle">EVERYTHING YOU NEED TO KNOW</p>
       </div>
@@ -25,7 +26,7 @@ export default function DetailsSection() {
         {/* Hotel image */}
         <div className="details-image-wrap">
           <img
-            src="/finca-biniagual-illustration.png"
+            src="/finca-biniagual-illustration.webp"
             className="details-hotel-img"
             alt="."
           />
@@ -35,25 +36,25 @@ export default function DetailsSection() {
  
         {/* Body */}
         <div className="details-body">
-          <h3 className="details-venue-name">Hilton Alexandria Corniche</h3>
+          <h3 className="details-venue-name">{VENUE.name}</h3>
  
           <div className="details-info-grid">
             <div className="details-info-row">
-              <span className="details-info-icon">📅</span>
+              <span className="details-info-icon" aria-hidden="true">📅</span>
               <span className="details-info-label">DATE</span>
-                <span className="details-info-value">Thursday, 1 October 2026</span>
+                <span className="details-info-value">{WEDDING.dateFull}</span>
             </div>
  
             <div className="details-info-row">
-              <span className="details-info-icon">🕔</span>
+              <span className="details-info-icon" aria-hidden="true">🕔</span>
               <span className="details-info-label">TIME</span>
-              <span className="details-info-value">From 5:00 PM until 3:00 AM</span>
+                <span className="details-info-value">{WEDDING.time}</span>
             </div>
  
             <div className="details-info-row">
-              <span className="details-info-icon">📍</span>
+              <span className="details-info-icon" aria-hidden="true">📍</span>
               <span className="details-info-label">WHERE</span>
-              <span className="details-info-value">Hilton Corniche, Alexandria</span>
+                <span className="details-info-value">{VENUE.address}</span>
             </div>
           </div>
  

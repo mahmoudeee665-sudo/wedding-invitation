@@ -1,4 +1,5 @@
 import React from 'react';
+import { COUPLE, WEDDING, QURAN_VERSE_ARABIC, QURAN_VERSE_ENGLISH } from '../constants';
 import './Footer.css';
 
 export default function Footer() {
@@ -13,18 +14,18 @@ export default function Footer() {
         />
       </div>
 
-      <p className="footer-names fade-up" >Mostafa &amp; Raghad</p>
+      <p className="footer-names fade-up" >{COUPLE.groom} &amp; {COUPLE.bride}</p>
 
       <p className="footer-date fade-up" >
-        20 · 06 · 2026
+        {WEDDING.dateFooter}
       </p>
 
       <p className="footer-arabic arabic-text fade-up" >
-        وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        {QURAN_VERSE_ARABIC}
       </p>
 
       <p className="footer-verse fade-up">
-        And He placed between you affection and mercy — Quran 30:21
+        {QURAN_VERSE_ENGLISH}
       </p>
 
       <div className="footer-divider">

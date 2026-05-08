@@ -1,4 +1,3 @@
-# Hassan & Yasmin — Wedding Invitation
 
 A React-based digital wedding invitation with intro poster, video transition, and full scrollable website.
 

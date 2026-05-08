@@ -1,37 +1,46 @@
 .moments-section {
   padding: 80px 20px;
-  background: #f5f0e8; /* غيرها حسب تصميمك */
+  background: #f5f0e8;
   overflow: hidden;
 }
 
 .moments-title {
   text-align: center;
-  font-family: var(--font-script);  /* ✅ نفس خط Welcome */
+  font-family: var(--font-script);
   font-size: clamp(44px, 8vw, 64px);
   font-weight: 400;
   color: var(--text-dark);
   margin-bottom: 50px;
   line-height: 1;
 }
-/* الكارد */
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeScroll 15s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .image-card {
   width: 240px;
   height: 340px;
-  margin: 5px 5px; /* ✅ المسافات */
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-/* الصورة */
 .image-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-/* لو المسافات لسه مش باينة */
-.rfm-child {
-  margin: 0 12px !important;
-}
-
