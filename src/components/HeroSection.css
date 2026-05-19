@@ -85,6 +85,27 @@
   animation: fadeUp 0.9s ease both;
 }
 
+/* ─── Split Text Reveal ──────────────────────────────────────── */
+.name-slide-left {
+  display: inline-block;
+  animation: slideLeft 0.8s ease both;
+}
+
+.name-slide-right {
+  display: inline-block;
+  animation: slideRight 0.8s ease both;
+}
+
+@keyframes slideLeft {
+  0%   { transform: translateX(-60px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  0%   { transform: translateX(60px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
 /* Arabic Bismillah */
 .arabic-text {
   font-family: var(--font-arabic);
@@ -92,7 +113,7 @@
 }
 
 .hero-bismillah {
-  font-size: clamp(18px, 4vw, 26px);
+  font-size: clamp(20px, 4.5vw, 30px);
   color: var(--gold-light);
   font-weight: 400;
   line-height: 1.5;
@@ -101,41 +122,107 @@
 
 .hero-pre-title {
   font-family: var(--font-caps);
-  font-size: clamp(30px, 2vw, 13px);
+  font-size: 30px;
   letter-spacing: 0.3em;
   color: var(--cream-dark);
-  text-transform: uppercase;
+  text-transform: uppercase;  
   opacity: 0.85;
 }
 
 .hero-names {
   font-family: var(--font-script);
-  font-size: clamp(35px, 5vw, 92px);
+  font-size: clamp(37px, 7vw, 92px);
   font-weight: 400;
-  background: linear-gradient(90deg, var(--gold-light), var(--gold), #f5e6a3, var(--gold-light));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  line-height: 1.1;
-  white-space: nowrap;
-  animation: shimmerGold 4s linear infinite;
+  line-height: 1.2;
+  padding: 0 16px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: 7d5657 center;
+  align-items: baseline;
+  gap: 12px;
 }
 
-@keyframes shimmerGold {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
+.name-slide-left,
+.name-slide-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15);
+  position: relative;
+}
+
+.name-slide-left::after,
+.name-slide-right::after {
+  content: '';
+  display: block;
+  width: 80%;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  margin-top: 4px;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.hero-section.active .name-slide-left::after,
+.hero-section.active .name-slide-right::after {
+  animation: underlineReveal 0.6s ease 0.4s both;
+}
+
+@keyframes underlineReveal {
+  0%   { transform: scaleX(0); opacity: 0; }
+  100% { transform: scaleX(1); opacity: 0.7; }
+}
+
+.name-slide-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.hero-section.active .name-slide-left {
+  animation: slideLeft 0.8s ease both;
+}
+
+.name-slide-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(80px);
+  padding-right: 6px;
+}
+
+.hero-section.active .name-slide-right {
+  animation: slideRight 0.8s ease both;
 }
 
 .ampersand {
   color: var(--gold-light);
-  -webkit-text-fill-color: var(--gold-light);
   font-style: italic;
+  opacity: 0;
 }
 
+.hero-section.active .ampersand {
+  animation: fadeIn 0.6s ease 0.3s both;
+}
+
+@keyframes slideLeft {
+  0%   { transform: translateX(-80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  0%   { transform: translateX(80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
 .hero-arabic-sub {
-  font-size: clamp(16px, 3vw, 22px);
+  font-size: clamp(18px, 3.5vw, 24px);
   color: var(--cream-dark);
   opacity: 0.85;
 }
@@ -143,7 +230,7 @@
 .hero-date {
   margin-top: -6px;
   font-family: var(--font-caps);
-  font-size: clamp(22px, 4vw, 34px);
+  font-size: clamp(24px, 4.5vw, 38px);
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--gold-light);

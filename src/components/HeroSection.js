@@ -51,7 +51,7 @@ useEffect(() => {
   }));
 
   return (
-    <section className="hero-section">
+    <section className={`hero-section${active ? " active" : ""}`}>
       {/* ── Floating petals ── */}
       <div className="petals-container">
         {petals.map((p) => (
@@ -98,8 +98,10 @@ loop
        We're Getting Engaged
         </p>
 
-        <h1 className="hero-names" style={{ animationDelay: "0.8s" }}>
-          {COUPLE.groom} <span className="ampersand">&amp;</span> {COUPLE.bride}
+        <h1 className="hero-names" key={active ? "show" : "hide"}>
+          <span className="name-slide-left">{COUPLE.groom}</span>
+          <span className="ampersand">&amp;&thinsp;</span>  
+          <span className="name-slide-right">{COUPLE.bride}</span>
         </h1>
 
         <p

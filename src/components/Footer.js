@@ -14,7 +14,7 @@ export default function Footer() {
         />
       </div>
 
-      <p className="footer-names fade-up" >{COUPLE.groom} &amp; {COUPLE.bride}</p>
+      <p className="footer-names fade-up" >{COUPLE.groom}&thinsp; &amp; &thinsp; {COUPLE.bride}</p>
 
       <p className="footer-date fade-up" >
         {WEDDING.dateFooter}

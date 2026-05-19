@@ -7,7 +7,7 @@
 .moments-title {
   text-align: center;
   font-family: var(--font-script);
-  font-size: clamp(44px, 8vw, 64px);
+  font-size: clamp(48px, 9vw, 72px);
   font-weight: 400;
   color: var(--text-dark);
   margin-bottom: 50px;

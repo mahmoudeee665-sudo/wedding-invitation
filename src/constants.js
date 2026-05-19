@@ -4,17 +4,17 @@ export const COUPLE = {
 };
 
 export const WEDDING = {
-  date: new Date("2026-10-01T18:00:00"),
-  dateDisplay: "01 OCT 2026",
-  dateFull: "Thursday, 1 October 2026",
-  dateFooter: "01 · 10 · 2026",
-  time: "From 5:00 PM until 3:00 AM",
+  date: new Date("2026-06-16T20:00:00"),
+  dateDisplay: "16 JUN 2026",
+  dateFull: "Tuesday, 16 June 2026",
+  dateFooter: "16 · 06 · 2026",
+  time: "From 8:00 PM until 11:00 PM",
 };
 
 export const VENUE = {
-  name: "Hilton Alexandria Corniche",
-  address: "Hilton Corniche, Alexandria",
-  mapsUrl: "https://www.google.com/maps/search/Hilton+Alexandria+Corniche",
+  name: "Villa Gold Garden",
+  address: "Villa Gold Garden",
+  mapsUrl: "https://maps.app.goo.gl/vD3zVXnEwLNvZkem9?g_st=awb",
 };
 
 export const BISMILLAH = "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ";

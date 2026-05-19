@@ -6,7 +6,6 @@ export default function IntroPoster({ setPhase }) {
   const videoRef = useRef(null);
 
   const [started, setStarted] = useState(false);
-  const [fadeOut, setFadeOut] = useState(false);
 
   /* Preload video immediately */
 
@@ -45,21 +44,12 @@ export default function IntroPoster({ setPhase }) {
   /* Finish intro */
 
   const handleEnded = () => {
-
-    setFadeOut(true);
-
-  };
-
-  const handleTransitionEnd = (e) => {
-    if (e.propertyName === "opacity" && fadeOut) setPhase("site");
+    setPhase("site");
   };
 
   return (
 
-    <div
-      className={`intro-screen ${fadeOut ? "fade-out" : ""}`}
-      onTransitionEnd={handleTransitionEnd}
-    >
+    <div className="intro-screen">
 
       {/* Poster before click */}
 
