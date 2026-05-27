@@ -122,24 +122,11 @@ loop
         </div>
 
         <div className="scroll-indicator" style={{ animationDelay: "2s" }}>
-          <div className="scroll-icon">
-            <svg width="20" height="30" viewBox="0 0 20 30" fill="none">
-              <rect
-                x="1"
-                y="1"
-                width="18"
-                height="28"
-                rx="9"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <circle
-                className="scroll-dot"
-                cx="10"
-                cy="8"
-                r="3"
-                fill="currentColor"
-              />
+          <div className="scroll-arrows">
+            <svg width="36" height="72" viewBox="0 0 24 48" fill="none">
+              <path d="M4 12l8 8 8-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M4 24l8 8 8-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M4 36l8 8 8-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
           <p className="scroll-label">Scroll Down</p>

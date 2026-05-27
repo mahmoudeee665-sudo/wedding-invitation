@@ -4,17 +4,17 @@ export const COUPLE = {
 };
 
 export const WEDDING = {
-  date: new Date("2026-06-16T20:00:00"),
-  dateDisplay: "16 JUN 2026",
-  dateFull: "Tuesday, 16 June 2026",
-  dateFooter: "16 · 06 · 2026",
+  date: new Date("2026-06-20T20:00:00+02:00"),
+  dateDisplay: "20 June 2026",
+  dateFull: "20 June 2026",
+  dateFooter: "20 · 06 · 2026",
   time: "From 8:00 PM until 11:00 PM",
 };
 
 export const VENUE = {
-  name: "Villa Gold Garden",
-  address: "Villa Gold Garden",
-  mapsUrl: "https://maps.app.goo.gl/vD3zVXnEwLNvZkem9?g_st=awb",
+  name: "Le Gardin",
+  address: "Le Gardin, Alexandria",
+  mapsUrl: "https://maps.google.com/?q=31.222778,29.984993",
 };
 
 export const BISMILLAH = "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ";

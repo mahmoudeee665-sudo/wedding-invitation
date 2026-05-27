@@ -11,6 +11,27 @@ import Footer from "./components/Footer";
 import useFadeUp from "./hooks/useFadeUp";
 import "./App.css";
 
+function smoothScrollBy(deltaY, duration) {
+  const start = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  const startTime = performance.now();
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const y = start + deltaY * eased;
+
+    window.scrollTo({ top: y, behavior: "instant" });
+    document.documentElement.scrollTop = y;
+    document.body.scrollTop = y;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
 
 export default function App() {
 
@@ -18,11 +39,42 @@ export default function App() {
   const [muted, setMuted] = useState(false);
 
   const musicRef = useRef(null);
-useFadeUp();
-  /* ───────────────────────────── */
-  /* Initialize AOS */
-  /* ───────────────────────────── */
+  const userScrolled = useRef(false);
 
+  useFadeUp();
+
+  /* ── Auto-scroll teaser ── */
+  useEffect(() => {
+    if (phase !== "site") return;
+
+    userScrolled.current = false;
+
+    const cancel = () => { userScrolled.current = true; };
+    window.addEventListener("wheel", cancel, { passive: true });
+    window.addEventListener("touchstart", cancel, { passive: true });
+
+    let timer;
+
+    function cycle() {
+      if (userScrolled.current) return;
+      smoothScrollBy(300, 1200);
+      timer = setTimeout(() => {
+        if (userScrolled.current) return;
+        smoothScrollBy(-300, 1200);
+        timer = setTimeout(() => {
+          if (!userScrolled.current) cycle();
+        }, 4000);
+      }, 1600);
+    }
+
+    timer = setTimeout(cycle, 3000);
+
+    return () => {
+      window.removeEventListener("wheel", cancel);
+      window.removeEventListener("touchstart", cancel);
+      clearTimeout(timer);
+    };
+  }, [phase]);
 
   /* ───────────────────────────── */
   /* Start music after intro */

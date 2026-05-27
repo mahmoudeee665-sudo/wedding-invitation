@@ -138,7 +138,7 @@
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: 7d5657 center;
+  justify-content: center;
   align-items: baseline;
   gap: 12px;
 }
@@ -263,27 +263,44 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: var(--cream-dark);
-  opacity: 0.7;
-  animation: fadeIn 1s ease both, bounceDown 2s ease 2.5s infinite;
+  opacity: 0.85;
+  animation: fadeIn 1s ease both;
   margin-top: 8px;
 }
 
-.scroll-icon {
+.scroll-arrows {
   color: var(--gold-light);
+  animation: glowPulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.3));
 }
 
-.scroll-dot {
-  animation: bounceDown 2s ease infinite;
+.scroll-arrows path {
+  animation: chevronBounce 2s ease-in-out infinite;
   transform-origin: center;
+}
+
+.scroll-arrows path:nth-child(1) { animation-delay: 0s; }
+.scroll-arrows path:nth-child(2) { animation-delay: 0.3s; }
+.scroll-arrows path:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes chevronBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50%      { transform: translateY(4px); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.2)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(201, 168, 76, 0.7)); }
 }
 
 .scroll-label {
   font-family: var(--font-caps);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--cream-dark);
+  color: var(--cream);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+  opacity: 0.85;
 }
 
 /* iPhone SE / very small screens */
