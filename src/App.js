@@ -21,7 +21,6 @@ function smoothScrollBy(deltaY, duration) {
     const eased = 1 - Math.pow(1 - progress, 3);
     const y = start + deltaY * eased;
 
-    window.scrollTo({ top: y, behavior: "instant" });
     document.documentElement.scrollTop = y;
     document.body.scrollTop = y;
 
