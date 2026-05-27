@@ -53,11 +53,13 @@ export default function App() {
     window.addEventListener("wheel", cancel, { passive: true });
     window.addEventListener("touchstart", cancel, { passive: true });
 
+    const isInstagram = navigator.userAgent.includes('Instagram');
     let timer;
 
     function cycle() {
       if (userScrolled.current) return;
       smoothScrollBy(300, 1200);
+      if (isInstagram) return;
       timer = setTimeout(() => {
         if (userScrolled.current) return;
         smoothScrollBy(-300, 1200);
