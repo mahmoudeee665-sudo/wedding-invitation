@@ -9,6 +9,7 @@ import DetailsSection from "./components/DetailsSection";
 import OrderSection from "./components/OrderSection";
 import Footer from "./components/Footer";
 import useFadeUp from "./hooks/useFadeUp";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
 function smoothScrollBy(deltaY, duration) {
@@ -108,6 +109,8 @@ export default function App() {
 
   return (
     <div className="app">
+
+      <Analytics />
 
       {/* Background music */}
 
